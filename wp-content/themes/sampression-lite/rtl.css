@@ -1,0 +1,227 @@
+/*
+Theme Name: Sampression Lite
+Description: Adds support for languages written in a Right To Left (RTL) direction.
+See http://codex.wordpress.org/Right_to_Left_Language_Support
+*/
+
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video  {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+caption,
+th,
+td {
+	text-align: right;
+}
+blockquote { 
+margin: 15px 15px 15px 30px; margin: 1.5rem 1.5rem 1.5rem 3.0rem; 
+padding-left: 0;
+padding-right: 20px; padding-right: 2.0rem; 
+border-left:0;
+border-right: 5px solid #ddd; border-right:0.5rem solid #ddd;
+}
+li {
+	margin-right: 15px; margin-right: 1.5rem;
+}
+pre{
+	
+}
+/* -------------------------------------------------------------- */
+.container .column, .container .columns {
+    float: right;
+}
+img.logo-img {
+    display: inline;
+    float: right;
+	margin-right:0;
+	margin-left:10px; margin-left: 1rem;
+}
+.col {
+    float: right;
+}
+.ico {
+    float: right;
+}
+#btn-nav-opt {
+	right:10px; right: 1rem;
+}
+#top-nav{
+	float:left;
+}
+#top-nav ul li:last-child {
+	margin-left:0;
+}
+#interaction-sec{
+	float:left;
+}
+#searchform input, .sm-top a, #get-cats, select {
+ 	display:block;
+	float:right;
+	-moz-box-shadow:-2px 2px 3px #D2DFDC;
+	-webkit-box-shadow:-2px 2px 3px #D2DFDC; 
+	box-shadow:-2px 2px 3px #D2DFDC; box-shadow:-0.2rem 0.2rem 0.3rem #D2DFDC;
+	}
+#searchform input#s {
+	border-left:none;
+	border-right: 1px solid #D2DFDC; border-right: 0.1rem solid #D2DFDC;
+	padding-right:10px; padding-right:1.0rem;
+	
+    -moz-border-radius-topleft:0;
+    -webkit-border-top-left-radius:0;
+	border-top-left-radius:0;
+	
+    -moz-border-radius-bottomleft:0;
+    -webkit-border-bottom-left-radius:0;
+	border-bottom-left-radius:0;
+	
+	-moz-border-radius-topright:5px;
+    -webkit-border-top-right-radius:5px;
+	border-top-right-radius:5px; border-top-right-radius:0.5rem;
+	
+    -moz-border-radius-bottomright:5px;
+    -webkit-border-bottom-right-radius:5px;
+	border-bottom-right-radius:5px; border-bottom-right-radius:0.5rem;
+	}
+#searchform input#s:hover{
+		border-right:1px solid #8AB7AD; border-right:0.1rem solid #8AB7AD;
+}
+#searchform input#searchsubmit {
+	background-position:-11px -7px; background-position:-1.1rem -0.7rem;
+	border-right:0;
+	text-indent:9999px; text-indent:9999rem;
+	border:1px solid #D2DFDC; border:0.1rem solid #D2DFDC;
+	padding: 0;
+	
+	
+    -moz-border-radius-topright:5px;
+    -webkit-border-top-left-radius:5px;
+	border-top-left-radius:5px; border-top-right-radius:0.5rem;
+		
+      -moz-border-radius-bottomleft:5px;
+      -webkit-border-bottom-left-radius:5px;
+	  border-bottom-left-radius:5px; border-bottom-left-radius:0.5rem;
+	  
+	  -moz-border-radius-topright:0;
+    -webkit-border-top-right-radius:0;
+	border-top-right-radius:0;
+		
+      -moz-border-radius-bottomright:0;
+      -webkit-border-bottom-right-radius:0;
+	  border-bottom-right-radius:0;
+}
+#top-nav ul ul:before , #top-nav ul ul ul:before {
+	text-indent: 9999px;
+    text-indent: 9999rem;
+}
+#primary-nav .nav-label {
+	right:10px; right: 1rem;
+	left:0;
+	margin-right:0;
+	width:75px; width:7.5rem;
+}
+#primary-nav ul.nav-listing {
+	margin:0 90px 0 0; margin: 0 9rem 0 0; 
+}
+#primary-nav ul.nav-listing li {
+    float: right;
+}
+#primary-nav ul.nav-listing li a span {
+	float:right;
+	margin-right:0;
+	margin-left:5px; margin-left:0.5rem;
+	}
+
+.single .meta time, .single .meta .cats, 
+.single .meta .edit, .single .meta .post-author, .single .meta .tags{ 
+	padding-left:10px; padding-left:1rem; margin-right:0; float:right; 
+}
+.meta-nav{ display: block;}
+.nav-previous .meta-nav {
+    float: left;
+	margin-right: 10px; margin-right: 1rem;
+}
+.nav-next .meta-nav {
+    float: right;
+	margin-left: 10px; margin-left: 1rem;
+}
+.widget a{
+
+}
+.widget  > a {
+
+}
+.widget img{
+	float:right;
+}
+.widget .avatar {
+    float: right;
+	margin: 0 0 5px 5px; margin: 0 0 0.5rem 0.5rem;
+}
+.widget #searchform {
+    float: right;
+	display:inline;
+}
+/* Smaller than standard 960 (devices and browsers) */
+	@media only screen and (max-width: 959px) {
+	.meta time{
+		margin-right:5px; margin-right:0.5rem;
+	}
+}
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	.single .meta .tags{ 
+		padding-right:35px; padding-right:3.5rem;
+	}
+}
+/* All Mobile Sizes (devices and browser) */
+	@media only screen and (max-width: 767px) {
+		#top-nav-mobile .nav-label{ 
+			display:inline; float: right; 
+			padding-left:6px; padding-left:0.6rem;
+			padding-right:0;
+		}
+		#primary-nav .nav-label {
+			margin-right:0;
+			float:right;
+			padding-left: 1px; padding-left: 0.1rem;
+			padding-right: 0;
+		}
+		.socialzero #searchform #s{ width:247px; width:24.7rem;}
+		.socialone #searchform #s{ width:212px; width:21.2rem;}
+		.socialtwo #searchform #s{ width:180px; width:18.0rem;}
+		.socialthree #searchform #s{ width:148px; width:14.8rem;}
+		.socialfour #searchform #s{ width:116px; width:11.6rem;}
+	
+	}
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+	@media only screen and (min-width: 480px) and (max-width: 767px) {
+		#page_id,.top-menu-nav, .menu-primary-menu-container select{ width:365px; width:36.5rem; background-position: 345px -181px; background-position: 2% -18.1rem;}
+		#get-cats{ background-position: 3% -181px; background-position: 3% -18.1rem;}
+		.socialzero #searchform #s{ width:359px; width:35.9rem;}
+		.socialone #searchform #s{ width:328px; width:32.8rem;}
+		.socialtwo #searchform #s{ width:296px; width:29.6rem;}
+		.socialthree #searchform #s{ width:264px; width:26.4rem;}
+		.socialfour #searchform #s{ width:232px;  width:23.2rem;}
+		}
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+	@media only screen and (max-width: 479px) {
+		#top-nav-mobile select{  background-position: 3% -181px; background-position: 3% -18.1rem;} 
+		#get-cats{ background-position: 3% -181px; background-position: 3% -18.1rem; }
+	}
+/* Retina displays */
+	@media
+	only screen and (-webkit-min-device-pixel-ratio: 1.5),
+	only screen and (-o-min-device-pixel-ratio: 5/2),
+	only screen and ( min-resolution: 144dpi) {
+		#top-nav-mobile select{
+			background-position: 2% -95px; background-position: 2% -9.5rem;
+		}
+		#get-cats{
+			background-position: 2% -95px; background-position: 2% -9.5rem;
+		}
+		#searchform input#searchsubmit {
+			background-position: -7px 4px; background-position: -0.7rem 0.4rem;
+			background-size: 33px 284px; background-size: 3.3rem 28.4rem;
+		}
+	}
