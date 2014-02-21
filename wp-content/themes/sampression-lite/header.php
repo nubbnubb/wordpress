@@ -92,7 +92,7 @@
 	  </div> 
       <!-- #top-nav -->
       <div id="interaction-sec" class="clearfix <?php echo getnoofclass(); ?>">
-        <?php get_search_form(); ?>
+        
      
        <ul class="sm-top">
        <?php // Being Social 

@@ -57,6 +57,7 @@ function responsive_get_option_defaults() {
 	$defaults = array(
 		'breadcrumb'                      => false,
 		'cta_button'                      => false,
+		'minified_css'                    => false,
 		'front_page'                      => 1,
 		'home_headline'                   => null,
 		'home_subheadline'                => null,
@@ -681,17 +682,19 @@ if ( !function_exists( 'responsive_breadcrumb_lists' ) ) {
 /**
  * A safe way of adding stylesheets to a WordPress generated page.
  */
-if ( !is_admin() ) {
-	add_action( 'wp_enqueue_scripts', 'responsive_css' );
-}
-
 if ( !function_exists( 'responsive_css' ) ) {
 
 	function responsive_css() {
 		$theme      = wp_get_theme();
 		$responsive = wp_get_theme( 'responsive' );
-		wp_enqueue_style( 'responsive-style', get_template_directory_uri() . '/style.css', false, $responsive['Version'] );
-		wp_enqueue_style( 'responsive-media-queries', get_template_directory_uri() . '/core/css/style.css', false, $responsive['Version'] );
+		$responsive_options = get_option( 'responsive_theme_options' );
+		if ( 1 == $responsive_options['minified_css'] ) {
+			wp_enqueue_style( 'responsive-style', get_template_directory_uri() . '/core/css/style.min.css', false, $responsive['Version'] );
+		} else {
+			wp_enqueue_style( 'responsive-style', get_template_directory_uri() . '/core/css/style.css', false, $responsive['Version'] );
+			wp_enqueue_style( 'responsive-media-queries', get_template_directory_uri() . '/core/css/responsive.css', false, $responsive['Version'] );
+		}
+
 		if ( is_rtl() ) {
 			wp_enqueue_style( 'responsive-rtl-style', get_template_directory_uri() . '/rtl.css', false, $responsive['Version'] );
 		}
@@ -701,14 +704,11 @@ if ( !function_exists( 'responsive_css' ) ) {
 	}
 
 }
+add_action( 'wp_enqueue_scripts', 'responsive_css' );
 
 /**
  * A safe way of adding JavaScripts to a WordPress generated page.
  */
-if ( !is_admin() ) {
-	add_action( 'wp_enqueue_scripts', 'responsive_js' );
-}
-
 if ( !function_exists( 'responsive_js' ) ) {
 
 	function responsive_js() {
@@ -726,6 +726,7 @@ if ( !function_exists( 'responsive_js' ) ) {
 	}
 
 }
+add_action( 'wp_enqueue_scripts', 'responsive_js' );
 
 /**
  * A comment reply.
@@ -812,160 +813,8 @@ function responsive_theme_support() {
 add_action( 'responsive_theme_options', 'responsive_theme_support', 2 );
 
 /**
- * WordPress Widgets start right here.
- */
-function responsive_widgets_init() {
-
-	register_sidebar( array(
-						  'name'          => __( 'Main Sidebar', 'responsive' ),
-						  'description'   => __( 'Area 1 - sidebar.php - Displays on Default, Blog, Blog Excerpt page templates', 'responsive' ),
-						  'id'            => 'main-sidebar',
-						  'before_title'  => '<div class="widget-title"><h3>',
-						  'after_title'   => '</h3></div>',
-						  'before_widget' => '<div id="%1$s" class="widget-wrapper %2$s">',
-						  'after_widget'  => '</div>'
-					  ) );
-
-	register_sidebar( array(
-						  'name'          => __( 'Right Sidebar', 'responsive' ),
-						  'description'   => __( 'Area 2 - sidebar-right.php - Displays on Content/Sidebar page templates', 'responsive' ),
-						  'id'            => 'right-sidebar',
-						  'before_title'  => '<div class="widget-title"><h3>',
-						  'after_title'   => '</h3></div>',
-						  'before_widget' => '<div id="%1$s" class="widget-wrapper %2$s">',
-						  'after_widget'  => '</div>'
-					  ) );
-
-	register_sidebar( array(
-						  'name'          => __( 'Left Sidebar', 'responsive' ),
-						  'description'   => __( 'Area 3 - sidebar-left.php - Displays on Sidebar/Content page templates', 'responsive' ),
-						  'id'            => 'left-sidebar',
-						  'before_title'  => '<div class="widget-title"><h3>',
-						  'after_title'   => '</h3></div>',
-						  'before_widget' => '<div id="%1$s" class="widget-wrapper %2$s">',
-						  'after_widget'  => '</div>'
-					  ) );
-
-	register_sidebar( array(
-						  'name'          => __( 'Left Sidebar Half Page', 'responsive' ),
-						  'description'   => __( 'Area 4 - sidebar-left-half.php - Displays on Sidebar Half Page/Content page templates', 'responsive' ),
-						  'id'            => 'left-sidebar-half',
-						  'before_title'  => '<div class="widget-title"><h3>',
-						  'after_title'   => '</h3></div>',
-						  'before_widget' => '<div id="%1$s" class="widget-wrapper %2$s">',
-						  'after_widget'  => '</div>'
-					  ) );
-
-	register_sidebar( array(
-						  'name'          => __( 'Right Sidebar Half Page', 'responsive' ),
-						  'description'   => __( 'Area 5 - sidebar-right-half.php - Displays on Content/Sidebar Half Page page templates', 'responsive' ),
-						  'id'            => 'right-sidebar-half',
-						  'before_title'  => '<div class="widget-title"><h3>',
-						  'after_title'   => '</h3></div>',
-						  'before_widget' => '<div id="%1$s" class="widget-wrapper %2$s">',
-						  'after_widget'  => '</div>'
-					  ) );
-
-	register_sidebar( array(
-						  'name'          => __( 'Home Widget 1', 'responsive' ),
-						  'description'   => __( 'Area 6 - sidebar-home.php - Displays on the Home Page', 'responsive' ),
-						  'id'            => 'home-widget-1',
-						  'before_title'  => '<div id="widget-title-one" class="widget-title-home"><h3>',
-						  'after_title'   => '</h3></div>',
-						  'before_widget' => '<div id="%1$s" class="widget-wrapper %2$s">',
-						  'after_widget'  => '</div>'
-					  ) );
-
-	register_sidebar( array(
-						  'name'          => __( 'Home Widget 2', 'responsive' ),
-						  'description'   => __( 'Area 7 - sidebar-home.php - Displays on the Home Page', 'responsive' ),
-						  'id'            => 'home-widget-2',
-						  'before_title'  => '<div id="widget-title-two" class="widget-title-home"><h3>',
-						  'after_title'   => '</h3></div>',
-						  'before_widget' => '<div id="%1$s" class="widget-wrapper %2$s">',
-						  'after_widget'  => '</div>'
-					  ) );
-
-	register_sidebar( array(
-						  'name'          => __( 'Home Widget 3', 'responsive' ),
-						  'description'   => __( 'Area 8 - sidebar-home.php - Displays on the Home Page', 'responsive' ),
-						  'id'            => 'home-widget-3',
-						  'before_title'  => '<div id="widget-title-three" class="widget-title-home"><h3>',
-						  'after_title'   => '</h3></div>',
-						  'before_widget' => '<div id="%1$s" class="widget-wrapper %2$s">',
-						  'after_widget'  => '</div>'
-					  ) );
-
-	register_sidebar( array(
-						  'name'          => __( 'Gallery Sidebar', 'responsive' ),
-						  'description'   => __( 'Area 9 - sidebar-gallery.php - Displays on the page after an image has been clicked in a Gallery', 'responsive' ),
-						  'id'            => 'gallery-widget',
-						  'before_title'  => '<div class="widget-title"><h3>',
-						  'after_title'   => '</h3></div>',
-						  'before_widget' => '<div id="%1$s" class="widget-wrapper %2$s">',
-						  'after_widget'  => '</div>'
-					  ) );
-
-	register_sidebar( array(
-						  'name'          => __( 'Colophon Widget', 'responsive' ),
-						  'description'   => __( 'Area 10 - sidebar-colophon.php, 100% width Footer widgets', 'responsive' ),
-						  'id'            => 'colophon-widget',
-						  'before_title'  => '<div class="widget-title"><h3>',
-						  'after_title'   => '</h3></div>',
-						  'before_widget' => '<div id="%1$s" class="colophon-widget widget-wrapper %2$s">',
-						  'after_widget'  => '</div>'
-					  ) );
-
-	register_sidebar( array(
-						  'name'          => __( 'Top Widget', 'responsive' ),
-						  'description'   => __( 'Area 11 - sidebar-top.php - Displays on the right of the header', 'responsive' ),
-						  'id'            => 'top-widget',
-						  'before_title'  => '<div class="widget-title"><h3>',
-						  'after_title'   => '</h3></div>',
-						  'before_widget' => '<div id="%1$s" class="%2$s">',
-						  'after_widget'  => '</div>'
-					  ) );
-
-	register_sidebar( array(
-						  'name'          => __( 'Footer Widget', 'responsive' ),
-						  'description'   => __( 'Area 12 - sidebar-footer.php - Maximum of 3 widgets per row', 'responsive' ),
-						  'id'            => 'footer-widget',
-						  'before_title'  => '<div class="widget-title"><h3>',
-						  'after_title'   => '</h3></div>',
-						  'before_widget' => '<div id="%1$s" class="grid col-300 %2$s"><div class="widget-wrapper">',
-						  'after_widget'  => '</div></div>'
-					  ) );
-}
-
-add_action( 'widgets_init', 'responsive_widgets_init' );
-
-/* Add fit class to third footer widget */
-function footer_widgets( $params ) {
-
-	global $footer_widget_num; //Our widget counter variable
-
-	//Check if we are displaying "Footer Sidebar"
-	if ( $params[0]['id'] == 'footer-widget' ) {
-		$footer_widget_num++;
-		$divider = 3; //This is number of widgets that should fit in one row
-
-		//If it's third widget, add last class to it
-		if ( $footer_widget_num % $divider == 0 ) {
-			$class                      = 'class="fit ';
-			$params[0]['before_widget'] = str_replace( 'class="', $class, $params[0]['before_widget'] );
-		}
-
-	}
-
-	return $params;
-}
-
-add_filter( 'dynamic_sidebar_params', 'footer_widgets' );
-
-/**
  * Front Page function starts here. The Front page overides WP's show_on_front option. So when show_on_front option changes it sets the themes front_page to 0 therefore displaying the new option
  */
-
 function responsive_front_page_override( $new, $orig ) {
 	global $responsive_options;
 
@@ -1048,14 +897,14 @@ function responsive_install_plugins() {
 		)
 	);
 
-	tgmpa( $plugins, $config );
+	global $pagenow;
+	// Add plugin notification only if the current user is admin and on theme.php
+	if ( current_user_can( 'manage_options' ) && 'themes.php' == $pagenow ) {
+		tgmpa( $plugins, $config );
+	}
 
 }
-
-// Add plugin notification only if the current user is admin.
-if ( current_user_can( 'manage_options' ) ) {
-	add_action( 'tgmpa_register', 'responsive_install_plugins' );
-}
+add_action( 'tgmpa_register', 'responsive_install_plugins' );
 
 /*
  * Add notification to Reading Settings page to notify if Custom Front Page is enabled.
@@ -1182,3 +1031,39 @@ add_image_size( 'responsive-300', 300, 9999 );
 add_image_size( 'responsive-450', 450, 9999 );
 add_image_size( 'responsive-600', 600, 9999 );
 add_image_size( 'responsive-900', 900, 9999 );
+
+/*
+ * Get social icons.
+ *
+ * @since    1.9.4.9
+ */
+function responsive_get_social_icons() {
+
+	$responsive_options = responsive_get_options();
+
+	$sites = array (
+		'twitter'     => __( 'Twitter', 'responsive' ),
+		'facebook'    => __( 'Facebook', 'responsive' ),
+		'linkedin'    => __( 'LinkedIn', 'responsive' ),
+		'youtube'     => __( 'YouTube', 'responsive' ),
+		'stumbleupon' => __( 'StumbleUpon', 'responsive' ),
+		'rss'         => __( 'RSS Feed', 'responsive' ),
+		'googleplus'  => __( 'Google+', 'responsive' ),
+		'instagram'   => __( 'Instagram', 'responsive' ),
+		'pinterest'   => __( 'Pinterest', 'responsive' ),
+		'yelp'        => __( 'Yelp!', 'responsive' ),
+		'vimeo'       => __( 'Vimeo', 'responsive' ),
+		'foursquare'  => __( 'foursquare', 'responsive' ),
+	);
+
+	$html = '<ul class="social-icons">';
+	foreach( $sites as $key => $value ) {
+		if ( !empty( $responsive_options[$key . '_uid'] ) ) {
+			$html .= '<li class="' . esc_attr( $key ) . '-icon"><a href="' . $responsive_options[$key . '_uid'] . '">' . '<img src="' . responsive_child_uri( '/core/icons/' . esc_attr( $key ) . '-icon.png' ) . '" width="24" height="24" alt="' . esc_html( $value ) . '">' . '</a></li>';
+		}
+	}
+	$html .= '</ul><!-- .social-icons -->';
+
+	return $html;
+
+}

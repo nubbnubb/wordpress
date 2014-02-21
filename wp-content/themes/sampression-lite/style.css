@@ -72,7 +72,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 /* #Basic Styles
 ================================================== */
-	html { font-size: 62.5%; } 
+	html { font-size: 100%; } 
 	html, body { width:100%;  overflow-x:hidden; }
 	body {
 		background: #fff;
@@ -125,6 +125,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 	hr { border: solid #ddd; border-width: 1px 0 0; border-width: 0.1rem 0 0; clear: both; margin: 10px 0 30px; margin: 1.0rem 0 3.0rem; height: 0; }
 
+	
 
 /* #Links
 ================================================== */
@@ -219,6 +220,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	.hidden { display: none;}	
 	.screen-reader-text { position: absolute; left: -1000em; left: -1000rem;}
 /* active classes for first,second and third level menus */
+        #top-nav {height:40px;}
 	#top-nav ul li.current_page_item > a{ color:#666;}
 	#top-nav ul li.current_page_parent > a{ color:#666;}
 	#top-nav ul li.current_page_parent ul li.current_page_item > a{ color:#666;}
@@ -504,7 +506,7 @@ img.logo-img{
 	position:relative;
 	background: none;
 	padding: 2px 0; padding:0.2rem 0;
-    margin: 0 0 0 10px; margin: 0 0 0 1.0rem;
+    margin: 0 0 0 15px; margin: 0 0 0 1.5rem;
 	}
 
 #top-nav ul li:last-child {
@@ -513,11 +515,13 @@ img.logo-img{
 	padding-right:0;
 }
 #top-nav ul a:link, #top-nav ul a:visited {
-	color:#8AB7AD;
+	color:#EA5955;
 	text-decoration:none;
+	font-weight:bold;
 	}
 #top-nav ul li a:hover, #top-nav ul li.current-menu-item a, #top-nav ul li:hover > a, #top-nav ul li.current-menu-ancestor a, #top-nav ul li.current-menu-parent a, #top-nav ul li.sfHover li li a:hover {
-	color:#666;
+        color:#666;
+        font-size: 1.2em;
 	}
 
 /* Second Level */
