@@ -1,0 +1,274 @@
+# Translation of Expound in Russian
+# This file is distributed under the same license as the Expound package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2014-01-29 11:58:31+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: GlotPress/0.1\n"
+"Project-Id-Version: Expound\n"
+
+#: ../404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Страница не найдена."
+
+#: ../404.php:19
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr "Страница не найдена. Попробуйте воспользоваться ссылками ниже или поиском."
+
+#: ../404.php:27
+msgid "Most Used Categories"
+msgstr "Популярные рубрики"
+
+#: ../404.php:44
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Посмотрите в архивах по месяцам. %1$s"
+
+#: ../comments.php:29
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "<!-- %1$s -->Один комментарий к записи &laquo;%2$s&raquo;"
+msgstr[1] "%1$s комментария к записи &laquo;%2$s&raquo;"
+msgstr[2] "%1$s комментариев к записи &laquo;%2$s&raquo;"
+
+#: ../comments.php:36 ../comments.php:56
+msgid "Comment navigation"
+msgstr "Навигация"
+
+#: ../comments.php:37 ../comments.php:57
+msgid "&larr; Older Comments"
+msgstr "&larr; Старые комментарии"
+
+#: ../comments.php:38 ../comments.php:58
+msgid "Newer Comments &rarr;"
+msgstr "Новые комментарии &rarr;"
+
+#: ../comments.php:68
+msgid "Comments are closed."
+msgstr "Комментарии закрыты."
+
+#: ../content-page.php:18 ../content-single.php:20 ../image.php:94
+msgid "Pages:"
+msgstr "Страницы:"
+
+#: ../featured-content.php:19 ../featured-content.php:50
+#: ../related-content.php:22
+msgid "Permalink to %s"
+msgstr "Ссылка на %s"
+
+#: ../featured-content.php:24
+msgid "Continue reading &rarr;"
+msgstr "Читать далее &rarr;"
+
+#: ../functions.php:81
+msgid "Primary Menu"
+msgstr "Основное меню"
+
+#: ../functions.php:112
+msgid "Sidebar"
+msgstr "Боковая колонка"
+
+#: ../functions.php:264
+msgid "Proudly powered by %s"
+msgstr "Работает на %s"
+
+#: ../functions.php:266
+msgid "Theme: %1$s by %2$s"
+msgstr "Тема: %1$s, автор: %2$s"
+
+#: ../header.php:36
+msgid "Menu"
+msgstr "Меню"
+
+#: ../header.php:37
+msgid "Skip to content"
+msgstr "Перейти к содержимому"
+
+#: ../image.php:23
+msgid "Published <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\">%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>"
+msgstr "Опубликовано в <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\">%2$s</time></span>, <a href=\"%3$s\" title=\"Ссылка на полный размер\">%4$s &times; %5$s</a> в галерее <a href=\"%6$s\" title=\"Вернуться к %7$s\" rel=\"gallery\">%8$s</a>"
+
+#: ../image.php:37
+msgid "<span class=\"meta-nav\">&larr;</span> Previous"
+msgstr "<span class=\"meta-nav\">&larr;</span> Старые записи"
+
+#: ../image.php:38
+msgid "Next <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Новые записи <span class=\"meta-nav\">&rarr;</span>"
+
+#: ../image.php:103
+msgid "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "<a class=\"comment-link\" href=\"#respond\" title=\"Оставить комментарийt\">Напишите комментарий</a> или оставьте трэкбэк: <a class=\"trackback-link\" href=\"%s\" title=\"Адрес трэкбэк для вашей записи\" rel=\"trackback\">адрес трэкбэк</a>."
+
+#: ../image.php:105
+msgid "Comments are closed, but you can leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "Коментирование закрыто, но вы можете оставить трэкбэк: <a class=\"trackback-link\" href=\"%s\" title=\"Адрес трэкбэк для вашей записи\" rel=\"trackback\">адрес трэкбэк</a>."
+
+#: ../image.php:107
+msgid "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">post a comment</a>."
+msgstr "Трэкбэки закрыты, новы можете <a class=\"comment-link\" href=\"#respond\" title=\"Написать комментарий\">оставить комментарий</a>."
+
+#: ../image.php:109
+msgid "Both comments and trackbacks are currently closed."
+msgstr "Комментарии закрыты."
+
+#: ../index.php:23
+msgid "%s"
+msgstr "%s"
+
+#: ../index.php:26
+msgid "Tag Archives: %s"
+msgstr "Архивы метки: %s"
+
+#: ../index.php:33
+msgid "Author Archives: %s"
+msgstr "Архивы автора: %s"
+
+#: ../index.php:41
+msgid "Daily Archives: %s"
+msgstr "Архивы по дням: %s"
+
+#: ../index.php:43
+msgid "Monthly Archives: %s"
+msgstr "Архивы по месяцам: %s"
+
+#: ../index.php:45
+msgid "Yearly Archives: %s"
+msgstr "Архивы по годам: %s"
+
+#: ../index.php:47
+msgid "Search Results for: %s"
+msgstr "Результаты поиска: %s"
+
+#: ../index.php:49
+msgid "Archives"
+msgstr "Архивы"
+
+#: ../no-results.php:13
+msgid "Nothing Found"
+msgstr "Не найдено"
+
+#: ../no-results.php:19
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Готовы опубликовать вашу первую запись? <a href=\"%1$s\">Начните здесь</a>."
+
+#: ../no-results.php:23
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Ничего не найдено по вашему запросу. Попробуйте другие ключевые слова."
+
+#: ../no-results.php:28
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Ничего не найдено, попробуйте воспользоваться поиском."
+
+#: ../related-content.php:10
+msgid "Related posts"
+msgstr "Читайте также"
+
+#: ../inc/extras.php:70
+msgid "Page %s"
+msgstr "Страница %s"
+
+#: ../inc/rateme.php:21
+msgid "Thank you for using Expound! If you like the theme, please consider giving it a <a target=\"_blank\" href=\"%s\">high rating on WordPress.org</a>. Thank you! <a href=\"%s\">(hide this message)</a>"
+msgstr "Спасибо за использование темы Expound! Если она вам понравилась, не забудьте оценить её на <a target=\"_blank\" href=\"%s\">WordPress.org</a>. Спасибо! <a href=\"%s\">(спрятать сообщение)</a>"
+
+#: ../inc/template-tags.php:34
+msgid "Post navigation"
+msgstr "Навигация"
+
+#: ../inc/template-tags.php:42
+msgid "&larr;"
+msgstr "&larr;"
+
+#: ../inc/template-tags.php:43
+msgid "&rarr;"
+msgstr "&rarr;"
+
+#: ../inc/template-tags.php:48
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Старые записи"
+
+#: ../inc/template-tags.php:52
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Новые записи <span class=\"meta-nav\">&rarr;</span>"
+
+#: ../inc/template-tags.php:75
+msgid "Pingback:"
+msgstr "Пингбэк:"
+
+#: ../inc/template-tags.php:75 ../inc/template-tags.php:96
+msgid "Edit"
+msgstr "Редактировать"
+
+#: ../inc/template-tags.php:85
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">сказал(а):</span>"
+
+#: ../inc/template-tags.php:88
+msgid "Your comment is awaiting moderation."
+msgstr "Ваш комментарий ожидает модерации."
+
+#: ../inc/template-tags.php:94
+msgid "%1$s at %2$s"
+msgstr "%1$s в %2$s"
+
+#: ../inc/template-tags.php:132
+msgid "%1$s / %2$s"
+msgstr "%1$s / %2$s"
+
+#: ../inc/template-tags.php:161
+msgid "%s min ago"
+msgid_plural "%s mins ago"
+msgstr[0] "%s минуту назад"
+msgstr[1] "%s минуты назад"
+msgstr[2] "%s минут назад"
+
+#: ../inc/template-tags.php:166
+msgid "%s hour ago"
+msgid_plural "%s hours ago"
+msgstr[0] "%s час назад"
+msgstr[1] "%s часа назад"
+msgstr[2] "%s часов назад"
+
+#: ../inc/template-tags.php:171
+msgid "%s day ago"
+msgid_plural "%s days ago"
+msgstr[0] "%s день назад"
+msgstr[1] "%s дня назад"
+msgstr[2] "%s дней назад"
+
+#: ../inc/template-tags.php:176
+msgid "%s week ago"
+msgid_plural "%s weeks ago"
+msgstr[0] "%s неделю назад"
+msgstr[1] "%s недели назад"
+msgstr[2] "%s недель назад"
+
+#: ../inc/template-tags.php:181
+msgid "%s month ago"
+msgid_plural "%s months ago"
+msgstr[0] "%s месяц назад"
+msgstr[1] "%s месяца назад"
+msgstr[2] "%s месяцев назад"
+
+#: ../inc/template-tags.php:186
+msgid "%s year ago"
+msgid_plural "%s years ago"
+msgstr[0] "%s год назад"
+msgstr[1] "%s года назад"
+msgstr[2] "%s лет назад"
+
+#: ../inc/template-tags.php:198
+msgid "ago"
+msgstr "назад"
+
+#: ../inc/template-tags.php:208 ../inc/template-tags.php:214
+msgid "%1$s in %2$s."
+msgstr "%1$s в рубрике %2$s."
+
+#: ../inc/template-tags.php:220
+msgid "Tags: "
+msgstr "Метки: "
