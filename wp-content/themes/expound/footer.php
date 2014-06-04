@@ -12,7 +12,7 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<?php do_action( 'expound_credits' ); ?>
+			Nubb.no - Nordiske ungdomsbokbloggere
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
