@@ -185,7 +185,7 @@ function expound_get_featured_posts() {
 	global $wp_query;
 
 	// Default number of featured posts
-	$count = apply_filters( 'expound_featured_posts_count', 5 );
+	$count = apply_filters( 'expound_featured_posts_count', 8 );
 
 	// Jetpack Featured Content support
 	$sticky = apply_filters( 'expound_get_featured_posts', array() );
